@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Righteous', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c7cdd3;
+}
+
+.card{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;/*determinando q a carta é de um estilo 3d para que a class flip funcione e ela mostre os dois lados, ou seja, as duas cartas(front e back).*/
+    transition: all 0.5s ease;
+}
+
+.card_front, .card_back{
+    width: 100%;
+    height: 100%;
+    position: absolute; /*position absolute é em relação ao elemento acima do elemento q está sendo alterado. Nesse caso o elemento acima é o "card"*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    backface-visibility: hidden; /*Todas as faces da carta, tanto back ou front q estiverem invertidas, não estarão visíveis.*/
+}
+
+.flip{
+    transform: rotateY(180deg);
+
+}
+.card_front{
+    transform: rotateY(180deg); /*irá rotacionar a carta escolhida em 180graus na posição Y*/
+    background-color: #101c2c;
+}
+
+.card_back{
+    background-color: #05c3ff;
+    color: #101c2c;
+    font-size: 30px;
+}
+
+#gameOver{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+
+#restart{
+    padding: 20px;
+    font-size: 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#gameBoard{
+    max-width: 700px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
