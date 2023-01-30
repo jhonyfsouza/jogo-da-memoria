@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
 }
 
 body{
@@ -14,8 +14,8 @@ body{
 }
 
 .card{
-    width: 150px;
-    height: 150px;
+    /* width: 150px;*/
+    height: 150px; 
     position: relative;
     transform-style: preserve-3d;/*determinando q a carta é de um estilo 3d para que a class flip funcione e ela mostre os dois lados, ou seja, as duas cartas(front e back).*/
     transition: all 0.5s ease;
@@ -73,6 +73,7 @@ body{
 
 #gameBoard{
     max-width: 700px;
+    width: 100vh;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     gap: 20px;
